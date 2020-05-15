@@ -22,7 +22,7 @@ def mac_changer(interface, mac):
 
 
 def get_mac(interface):
-    ifconfig_result = subprocess.check_output(["interface", interface])
+    ifconfig_result = subprocess.check_output(["ifconfig", interface])
     # print(ifconfig_result)
     mac_result = re.search(r"\w\w:\w\w:\w\w:\w\w:\w\w:\w\w", ifconfig_result)
     if mac_result:
